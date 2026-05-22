@@ -11,7 +11,7 @@ Designed and implemented a highly available AWS network architecture across two 
 - 2 Public Subnets
 - 2 Private Subnets
 - Bastion Host
-- NAT Instance
+- NAT Instance in Public Subnet AZ1
 - 2 Private Application Servers
 - Application Load Balancer
 - Target Group + Health Checks
@@ -21,6 +21,7 @@ Designed and implemented a highly available AWS network architecture across two 
 
 ## Architecture
 
+```text
 Internet
    │
    ▼
@@ -29,15 +30,16 @@ Application Load Balancer
    ├── App-01 (Private / AZ1)
    └── App-02 (Private / AZ2)
 
-Bastion Host (Public)
+Bastion Host (Public / AZ1)
    │
    ├── SSH → App-01
    └── SSH → App-02
 
-NAT Instance (Public)
+NAT Instance (Public / AZ1)
    │
    ├── Private AZ1 outbound
    └── Private AZ2 outbound
+```
 
 ---
 
@@ -111,6 +113,14 @@ Health checks recovered after restoring the failed instance:
 
 ---
 
+## Design Note
+
+This lab uses a single NAT instance in Public Subnet AZ1 for cost optimization.  
+The ALB and application layer are Multi-AZ, but NAT is not fully highly available.  
+In production, use one NAT Gateway per AZ.
+
+---
+
 ## Skills Demonstrated
 
 - AWS VPC Design
@@ -124,12 +134,3 @@ Health checks recovered after restoring the failed instance:
 - Multi-AZ Failover Testing
 - Linux Administration
 - SSH Troubleshooting
-
-
-
-
-
-## Design Note
-This lab uses a single NAT instance in Public Subnet AZ1 for cost optimization.
-In production, use one NAT Gateway per AZ.
-
