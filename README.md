@@ -132,5 +132,4 @@ In production, use one NAT Gateway per AZ.
 - Application Load Balancing
 - Health Checks
 - Multi-AZ Failover Testing
-- Linux Administration
 - SSH Troubleshooting
