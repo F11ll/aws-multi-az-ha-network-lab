@@ -57,7 +57,7 @@ Private instances reject direct SSH access from the internet.
 
 ![Security Groups](assets/02-security-groups.png)
 
-![Internet Gateway](assets/03-internet-gateway.png)
+![Internet Gateway](assets/03-Internet-gateway.png)
 
 ![Load Balancer](assets/04-load-balancer.png)
 
@@ -101,7 +101,7 @@ App server in AZ2:
 
 Failover validation after stopping one application instance:
 
-![Failover Test](assets/12-failover-test.png)
+![Failover Test](assets/12%20-failover-test.png)
 
 ---
 
