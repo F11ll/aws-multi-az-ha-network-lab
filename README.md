@@ -38,7 +38,6 @@ NAT Instance (Public)
    │
    ├── Private AZ1 outbound
    └── Private AZ2 outbound
-```
 
 ---
 
