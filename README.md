@@ -131,8 +131,6 @@ Health checks recovered after restoring the failed instance:
 
 
 ## Design Note
+This lab uses a single NAT instance in Public Subnet AZ1 for cost optimization.
+In production, use one NAT Gateway per AZ.
 
-This project is designed as a cost-optimized AWS networking lab.
-The application tier is deployed across two Availability Zones and protected behind an Application Load Balancer for high availability testing.
-
-A single NAT instance is deployed in Public Subnet AZ1 and is used by both private subnets for outbound internet access. In a production-grade HA design, each AZ should have its own NAT Gateway to avoid cross-AZ dependency and single points of failure.
